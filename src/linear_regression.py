@@ -1,12 +1,27 @@
-from pprint import pprint
 import numpy as np
 import matplotlib.pyplot as plt
+from sklearn.datasets import make_regression
+import pandas as pd
+from sklearn.preprocessing import MinMaxScaler
+
+
+def get_dataset():
+    X, y = make_regression(100, 1, n_informative=1, n_targets=1, noise=10
+                           )
+    X = MinMaxScaler().fit_transform(X)
+    data = {f'feature_{i+1}': x for i, x in enumerate(zip(*X))}
+    data['target'] = y
+    df = pd.DataFrame(data)
+    df = df.sort_values(by=['feature_1'])
+    df = df[[c for c in sorted(df.columns)
+             if c not in ['target']] + ['target']]
+    return df
 
 
 def simple_linear_reg(_data):
     w1, w0 = 0.5, 0.5
     lr = 0.001
-    for i in range(15000):
+    for i in range(50000):
         loss = 0
         grad1 = 0
         grad0 = 0
@@ -26,7 +41,7 @@ def simple_linear_reg(_data):
 def linear_reg_v2(_data):
     w2, w1, w0 = 0.5, 0.5, 0.5
     lr = 0.001
-    for i in range(15000):
+    for i in range(50000):
         loss = 0
         grad2 = 0
         grad1 = 0
@@ -62,3 +77,20 @@ if __name__ == '__main__':
     plt.legend()
 
     plt.savefig('graph/linear_reg.png')
+
+
+# if __name__ == '__main__':
+#     dataf = get_dataset()
+#     my_x, my_y = zip(*dataf.values.tolist())
+#     u1, u0 = simple_linear_reg(dataf.values.tolist())
+#     pred_y = [u1*k + u0 for k in my_x]
+
+#     u2, u1, u0 = linear_reg_v2(dataf.values.tolist())
+#     pred_y_v2 = [u2*k*k + u1*k + u0 for k in my_x]
+
+#     plt.plot(my_x, my_y, label='train', color='blue')
+#     plt.plot(my_x, pred_y, label='pred', color='red')
+#     plt.plot(my_x, pred_y_v2, label='pred_v2', color='orange')
+#     plt.legend()
+
+#     plt.savefig('graph/linear_reg.png')

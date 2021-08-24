@@ -61,4 +61,4 @@ if __name__ == '__main__':
     plt.plot(my_x, pred_y_v2, label='pred_v2', color='orange')
     plt.legend()
 
-    plt.savefig('linear_reg.png')
+    plt.savefig('graph/linear_reg.png')

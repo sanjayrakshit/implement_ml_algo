@@ -69,4 +69,4 @@ if __name__ == '__main__':
     print(f'Columns: {dataf.columns}')
     sns.scatterplot(x='feature_1', y='feature_2', data=dataf, hue='target')
 
-    plt.savefig('logistic_regression.png')
+    plt.savefig('graph/logistic_regression.png')

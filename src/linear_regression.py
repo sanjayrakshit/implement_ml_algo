@@ -46,19 +46,19 @@ def linear_reg_v2(_data):
     return w2, w1, w0
 
 
-data = [(1, 1), (2, 3), (3, 4), (5, 5)]
-my_x, my_y = zip(*data)
+if __name__ == '__main__':
+    data = [(1, 1), (2, 3), (3, 4), (5, 5)]
+    my_x, my_y = zip(*data)
 
-u1, u0 = simple_linear_reg(data)
-pred_y = [u1*k + u0 for k in my_x]
+    u1, u0 = simple_linear_reg(data)
+    pred_y = [u1*k + u0 for k in my_x]
 
-u2, u1, u0 = linear_reg_v2(data)
-pred_y_v2 = [u2*k*k + u1*k + u0 for k in my_x]
+    u2, u1, u0 = linear_reg_v2(data)
+    pred_y_v2 = [u2*k*k + u1*k + u0 for k in my_x]
 
-plt.plot(my_x, my_y, label='train', color='blue')
-plt.plot(my_x, pred_y, label='pred', color='red')
-plt.plot(my_x, pred_y_v2, label='pred_v2', color='orange')
-plt.legend()
+    plt.plot(my_x, my_y, label='train', color='blue')
+    plt.plot(my_x, pred_y, label='pred', color='red')
+    plt.plot(my_x, pred_y_v2, label='pred_v2', color='orange')
+    plt.legend()
 
-
-plt.savefig('linear_reg.png')
+    plt.savefig('linear_reg.png')

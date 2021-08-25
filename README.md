@@ -1,6 +1,6 @@
 # Implementing Machine Learning algorithms
 
-This is my lazy atempt to implement basic verisons of Machine Learning algorithm.
+This is my lazy atempt to implement basic verisons of Machine Learning algorithm from scratch and without the use of any libraries. However, I may use some libraries to create data and make plots.
 
 ## Steps:
 

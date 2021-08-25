@@ -16,6 +16,8 @@ def get_dataset():
     data = {f'feature_{i+1}': x for i, x in enumerate(zip(*X))}
     data['target'] = y
     df = pd.DataFrame(data)
+    df = df[[c for c in sorted(df.columns)
+             if c not in ['target']] + ['target']]
     return df
 
 
@@ -69,4 +71,4 @@ if __name__ == '__main__':
     print(f'Columns: {dataf.columns}')
     sns.scatterplot(x='feature_1', y='feature_2', data=dataf, hue='target')
 
-    plt.savefig('graph/logistic_regression.png')
+    plt.savefig('plots/logistic_regression.png')

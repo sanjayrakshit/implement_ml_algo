@@ -27,7 +27,7 @@ These are few issues which I personally faced while implementing and I thought I
 * If it is the loss you're calculating, then you should minimize it by going in the opposite direction(-ve sign while updating) of the gradient. However, if it is something you're maximizing, then you should go in the direction(+ve sign while updating) of the gradient
 * Drawing the decision surface is not mandatory but it is fun to visulaize it. The same can be achieved with some metrics if the decision surface is complex
 
-**Note:** *This repo is not a display of my skillset as a Machine Learning engineer. It was purely made for fun and to understand the algorithms better. Normally, there would be more complex steps involved in an end-to-end ML pipeline and I haven't even scratched the sruface in this repository.*
+**Note:** *This repo is not a display of my skillset as a Machine Learning engineer. It was purely made for fun and to understand the algorithms better. Normally, there would be more complex steps involved in an end-to-end ML pipeline and I haven't even scratched the surface in this repository.*
 
 ## Algorithms
 

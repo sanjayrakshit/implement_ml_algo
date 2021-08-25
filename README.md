@@ -29,7 +29,8 @@ These are few issues which I personally faced while implementing and I thought I
 
 **Note:** *This repo is not a display of my skillset as a Machine Learning engineer. It was purely made for fun and to understand the algorithms better. Normally, there would be more complex steps involved in an end-to-end ML pipeline and I haven't even scratched the sruface in this repository.*
 
-## Algorithms:
+## Algorithms
+
 * [Linear regression](src/linear_regression.py)
 * [Logistic regression](src/logistic_regression.py)
 * [svm](src/svm.py)

@@ -1,19 +1,21 @@
 import math
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import seaborn as sns
 from sklearn.datasets import make_classification
 from sklearn.preprocessing import MinMaxScaler
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-import pandas as pd
+
+
 # np.random.seed(10
 # )
-
 
 def get_dataset():
     X, y = make_classification(
         100, 2, n_informative=2, n_redundant=0, n_repeated=0, n_classes=2)
     X = MinMaxScaler().fit_transform(X)
-    data = {f'feature_{i+1}': x for i, x in enumerate(zip(*X))}
+    data = {f'feature_{i + 1}': x for i, x in enumerate(zip(*X))}
     data['target'] = y
     df = pd.DataFrame(data)
     df = df[[c for c in sorted(df.columns)
@@ -45,9 +47,9 @@ def logistic_regression(_data):
             grad0 += -1 * (y - _p) * 1
 
         mean_loss = np.mean(loss)
-        w2 = w2 - lr*grad2
-        w1 = w1 - lr*grad1
-        w0 = w0 - lr*grad0
+        w2 = w2 - lr * grad2
+        w1 = w1 - lr * grad1
+        w0 = w0 - lr * grad0
 
         print(
             f'Iteration: {iter:>3} || loss: {mean_loss:.5f} || w2: {w2:.5f} || w1: {w1:.5f} || w0: {w0:.5f}')
@@ -60,7 +62,7 @@ if __name__ == '__main__':
     u2, u1, u0 = logistic_regression(dataf.values.tolist())
 
     def surface(k):
-        return - (u1/u2) * k - (u0/u2)
+        return - (u1 / u2) * k - (u0 / u2)
 
     mark = list(range(-100, 100))
     plt.plot(mark, list(map(surface, mark)),

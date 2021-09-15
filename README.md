@@ -34,3 +34,4 @@ These are few issues which I personally faced while implementing and I thought I
 * [Linear regression](src/linear_regression.py)
 * [Logistic regression](src/logistic_regression.py)
 * [svm](src/svm.py)
+* [Tiny NN](src/NN.py) \[ [Inspiration](https://towardsdatascience.com/a-step-by-step-implementation-of-gradient-descent-and-backpropagation-d58bda486110) | [About](src/NN-about.md) \]

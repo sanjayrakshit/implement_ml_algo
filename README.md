@@ -25,7 +25,7 @@ These are few issues which I personally faced while implementing and I thought I
 * Techinically, one should initialize the weights randomly, but setting them to 0.5 works since we've normalized the data
 * Play around with the learning rate and number of epochs to find a balance in the results
 * If it is the loss you're calculating, then you should minimize it by going in the opposite direction(-ve sign while updating) of the gradient. However, if it is something you're maximizing, then you should go in the direction(+ve sign while updating) of the gradient
-* Drawing the decision surface is not mandatory but it is fun to visulaize it. The same can be achieved with some metrics if the decision surface is complex
+* Drawing the decision surface is not mandatory but it is fun to visulaize it. The same can be achieved with some metrics or loss, if the decision surface is complex
 
 **Note:** *This repo is not a display of my skillset as a Machine Learning engineer. It was purely made for fun and to understand the algorithms better. Normally, there would be more complex steps involved in an end-to-end ML pipeline and I haven't even scratched the surface in this repository.*
 
